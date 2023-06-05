@@ -35,12 +35,25 @@ function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   var numeroInvertido = parseInt(numero.toString().split('').reverse().join(''));
+   if(numeroInvertido === numero){
+      return  "Es capicua";
+   }
+   else{
+      return "No es capicua";
+   }
 }
 
 function deleteAbc(string) {
    // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
    // Retorna el string sin estas letras.
    // Tu código:
+   var arreglo = string.split("");
+   var caracteres = ["a", "b", "c"];
+   var arreglado = arreglo.filter(function(elemento){
+      return !caracteres.includes(elemento);
+   });
+   return arreglado.join("");
 }
 
 function sortArray(arrayOfStrings) {
@@ -49,6 +62,9 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
+   return arrayOfStrings.sort(function(a, b){
+      return a.length - b.length;
+   });
 }
 
 function buscoInterseccion(array1, array2) {
